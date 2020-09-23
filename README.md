@@ -36,8 +36,8 @@ Userspace rootkits almost always work by the well known LD_PRELOAD method. All r
 # dmesg | grep rks
 [ 2221.657804] rks: module (@ffffffffc0757000 - size: 16384 / diamorphine) has bad next pointer in list
 [ 2221.657825] rks: module (@ffffffffc0757000 - size: 16384 / diamorphine)  suspect attrs state
-[ 2221.657848] rks: Module diamorphine contains suspect instruction sequence    
-[ 2221.657980] rks: Module diamorphine contains suspect data sequence                                           
+[ 2221.657848] rks: module diamorphine contains suspect instruction sequence    
+[ 2221.657980] rks: module diamorphine contains suspect data sequence                                           
 [ 2221.658659] rks: syscall table sys_getdents entry points to a module!                   
 [ 2221.658673] rks: syscall table sys_getdents64 entry points to a module!
 ```
@@ -48,7 +48,7 @@ Userspace rootkits almost always work by the well known LD_PRELOAD method. All r
 # dmesg | grep rks
 [ 2328.273331] rks: module (@ffffffffc074b000 - size: 20480 / reptile_module) has bad next pointer in list
 [ 2328.273333] rks: module (@ffffffffc074b000 - size: 20480 / reptile_module)  suspect attrs state
-[ 2328.273358] rks: Module reptile_module contains suspect data sequence
+[ 2328.273358] rks: module reptile_module contains suspect data sequence
 ```
 
 ### Example detection of Beurk LD_PRELOAD rootkit
