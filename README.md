@@ -29,6 +29,36 @@ Many rootkits for the last 20 years have hooked certain functions by overwriting
 
 Userspace rootkits almost always work by the very well known LD_PRELOAD library preloading method. All running processes have their environment checked for LD_PRELOAD environment variable and also the file /etc/ld.so.preload is checked to see if it exists and is non-zero size.  
 
+### Example detection of diamorphine LKM rootkit
+
+```              
+# insmod ./rkspotter.ko
+# dmesg | grep rks
+[ 2221.657804] rks: module (@ffffffffc0757000 - size: 16384 / diamorphine) has bad next pointer in list
+[ 2221.657825] rks: module (@ffffffffc0757000 - size: 16384 / diamorphine)  suspect attrs state
+[ 2221.657848] rks: Module diamorphine contains suspect instruction sequence    
+[ 2221.657980] rks: Module diamorphine contains suspect data sequence                                           
+[ 2221.658659] rks: syscall table sys_getdents entry points to a module!                   
+[ 2221.658673] rks: syscall table sys_getdents64 entry points to a module!
+```
+### Example detection of Reptile LKM rootkit
+
+```
+# insmod ./rkspotter.ko
+# dmesg | grep rks
+[ 2328.273331] rks: module (@ffffffffc074b000 - size: 20480 / reptile_module) has bad next pointer in list
+[ 2328.273333] rks: module (@ffffffffc074b000 - size: 20480 / reptile_module)  suspect attrs state
+[ 2328.273358] rks: Module reptile_module contains suspect data sequence
+```
+
+### Example detection of Beurk LD_PRELOAD rootkit
+
+```
+# insmod ./rkspotter.ko
+# dmesg | grep rks
+[ 2651.683663] rks: found /etc/ld.so.preload exists and is not empty
+```
+
 ## Important! N.A.S.T.Y warning! 
 
 _"..**N**ot **a** **s**ecurity **t**ool **y**eah?.."_
