@@ -7,7 +7,7 @@ The most alarming statement is that __**"37.3% of detection tests didn't provide
 
 Rootkit spotter is an experimental **proof of concept** LKM showing the use of a few different techniques to try and detect/locate certain types of **known** rootkits.   
 
-Rootkit spotter can detect some **known** and **unknown** rootkits (using **known** techniques) by looking for anomalies associated with the use of rootkit techniques such as LKM hiding and syscall table patching. 
+Rootkit spotter can detect some **known** and **unknown** rootkits (using **known** techniques) by looking for anomalies associated with the use of rootkit techniques (e.g LKM hiding and syscall table patching)  
 
 Rootkit spotter does not try in any way to guard itself against malware that attempts to circumvent or bypass it. 
 
@@ -24,6 +24,10 @@ Each loadable kernel module inserted into the kernel is checked for patterns in 
 ### Identifying suspicious sys_call_table entries    
 
 For a handful of functions that are sometimes patched we check to see if the sys_call_table entry is pointing to code in an LKM. 
+
+### Identifying userspace LD_PRELOAD rootkits
+
+Running processes are checked for LD_PRELOAD environment variable and also the file /etc/ld.so.preload is checked for contents. 
 
 ## Important! N.A.S.T.Y warning! 
 
