@@ -257,7 +257,7 @@ void look_for_lkm(void)
             //
 	    if(lkm_code_check(mahjool->core_layout.base, mahjool->core_layout.text_size) != 0)
 	    {
-		printk("rks: Module %s contains suspect instruction sequence\n", mahjool->name);
+		printk("rks: module %s contains suspect instruction sequence\n", mahjool->name);
 	    }
 
             //// now some data checks..
@@ -268,7 +268,7 @@ void look_for_lkm(void)
                 // we filter out our own module by comparing address 
                 if(THIS_MODULE->core_layout.base != mahjool->core_layout.base)
                 {
-                    printk("rks: Module %s contains suspect data sequence\n", mahjool->name);
+                    printk("rks: module %s contains suspect data sequence\n", mahjool->name);
                 }
             }
  
