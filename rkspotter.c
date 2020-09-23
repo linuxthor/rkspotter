@@ -211,7 +211,7 @@ void look_for_lkm(void)
             //
             if((mahjool->list.next == LIST_POISON1) || (mahjool->list.prev == LIST_POISON2)) 
             {
-                printk("rks: module (@%px - size: %d / %s) has bad next pointer in list\n", 
+                printk("rks: module (@%px - size: %d / %s) has poison pointer in list\n", 
                                                                       (void *)mahjool->core_layout.base,
                                                                             mahjool->core_layout.size,
                                                                                         mahjool->name); 
