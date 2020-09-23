@@ -27,7 +27,7 @@ Many rootkits for the last 20 years have hooked certain functions by overwriting
 
 ### Identifying userspace LD_PRELOAD rootkits
 
-Userspace rootkits almost always work by the very well known LD_PRELOAD library preloading method. All running processes have their environment checked for LD_PRELOAD environment variable and also the file /etc/ld.so.preload is checked to see if it exists and is non-zero size (n.b:- there are a couple of rootkits that patch the linker loader to look for a different path so more would need to be done here to detect that)  
+Userspace rootkits almost always work by the well known LD_PRELOAD method. All running processes have their environment checked for LD_PRELOAD environment variable and also the file /etc/ld.so.preload is checked to see if it exists and is non-zero size (n.b:- there are a couple of rootkits that patch the linker loader to look for a different path so more would need to be done here to detect that)  
 
 ### Example detection of diamorphine LKM rootkit
 
