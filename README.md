@@ -1,4 +1,4 @@
-# rkspotter
+# Rootkit Spotter
 ![](rootkit-spotter-logo.png)    
 
 The paper "Effectiveness of Linux Rootkit Detection Tools" by Juho Junnila (http://jultika.oulu.fi/files/nbnfioulu-202004201485.pdf) makes it clear that current Linux rootkit detection tools (except perhaps LKRG) don't do a great job!    
