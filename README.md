@@ -5,7 +5,7 @@ The paper "Effectiveness of Linux Rootkit Detection Tools" by Juho Junnila (http
 
 The most alarming statement is that __**"37.3% of detection tests didn't provide any indication of a rootkit infection"**__      
 
-Rootkit spotter is an experimental **proof of concept** LKM showing the use of a few different techniques to try and detect/locate certain types of **known** rootkits.   
+Rootkit spotter is an experimental **proof of concept** LKM showing the use of a few different techniques to try and detect/locate certain types of **known** rootkits in a running system.   
 
 Rootkit spotter can detect some **known** and **unknown** rootkits (using **known** techniques) by looking for anomalies associated with the use of rootkit techniques (e.g LKM hiding and syscall table patching)  
 
