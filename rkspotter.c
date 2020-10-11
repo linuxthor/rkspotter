@@ -329,7 +329,14 @@ void look_for_userspace(void)
                 if(ts->mm != 0)
                 {
                     emem = ts->mm;
-                    // don't get out of bed for less than 16 bytes 
+
+                    // some tools (e.g HORSE PILL) use processes that fake being kernel threads 
+                    if(tsk[0] == '[')
+                    { 
+                        printk("rks: process %d (%s) appears to be a fake kernel thread\n",x,tsk);
+                    }
+                   
+                    // we don't get out of bed for less than 16 bytes 
                     if((emem->env_end - emem->env_start) > 16)
                     {
                         yabba = kmalloc((emem->env_end - emem->env_start), GFP_KERNEL);
